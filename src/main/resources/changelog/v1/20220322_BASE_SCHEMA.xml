@@ -1,0 +1,161 @@
+<databaseChangeLog
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="create-0001" author="Oleksandr Kogutenko">
+        <!-- ======================= uuid-ossp ======================= -->
+        <sql>
+            CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+        </sql>
+
+        <createTable tableName="system_user">
+            <column name="id" type="UUID" valueComputed="UUID()">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="email" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="first_name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="last_name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="birth_date" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
+            <column name="phone" type="varchar(255)" />
+            <column name="address" type="varchar(255)" />
+            <column name="updated_date" type="DATETIME"/>
+            <column name="created_date" type="DATETIME" defaultValue="now()">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+
+    <changeSet id="insert-0002" author="Oleksandr Kogutenko">
+        <!-- User 1 -->
+        <insert tableName="system_user">
+            <column name="id" value="b4a0fc99-4680-4639-919e-665e3ddb1665" />
+            <column name="email" value="user1@example.com" />
+            <column name="first_name" value="John" />
+            <column name="last_name" value="Doe" />
+            <column name="birth_date" value="1985-01-15" />
+            <column name="phone" value="+1234567890" />
+            <column name="address" value="1234 Elm Street" />
+            <column name="updated_date" valueComputed="now()" />
+            <column name="created_date" valueComputed="now()" />
+        </insert>
+        <!-- User 2 -->
+        <insert tableName="system_user">
+            <column name="id" value="48d19e43-dfe5-4b74-a61d-368eb8cde9df" />
+            <column name="email" value="user2@example.com" />
+            <column name="first_name" value="Alice" />
+            <column name="last_name" value="Smith" />
+            <column name="birth_date" value="1990-05-21" />
+            <column name="phone" value="+1987654321" />
+            <column name="address" value="2345 Oak Avenue" />
+            <column name="updated_date" valueComputed="now()" />
+            <column name="created_date" valueComputed="now()" />
+        </insert>
+        <!-- User 3 -->
+        <insert tableName="system_user">
+            <column name="id" value="b977d72f-2f40-4783-9f05-cced51649443" />
+            <column name="email" value="user3@example.com" />
+            <column name="first_name" value="Bob" />
+            <column name="last_name" value="Johnson" />
+            <column name="birth_date" value="1978-11-30" />
+            <!-- Phone is null -->
+            <column name="address" value="3456 Pine Street" />
+            <column name="updated_date" valueComputed="now()" />
+            <column name="created_date" valueComputed="now()" />
+        </insert>
+        <!-- User 4 -->
+        <insert tableName="system_user">
+            <column name="id" value="4acc2f4b-e743-40b7-83b8-c331dcedb534" />
+            <column name="email" value="user4@example.com" />
+            <column name="first_name" value="Chloe" />
+            <column name="last_name" value="Lee" />
+            <column name="birth_date" value="1992-07-14" />
+            <column name="phone" value="+1122334455" />
+            <column name="address" value="4567 Maple Street" />
+            <column name="updated_date" valueComputed="now()" />
+            <column name="created_date" valueComputed="now()" />
+        </insert>
+        <!-- User 5 -->
+        <insert tableName="system_user">
+            <column name="id" value="ddb1b3f6-1eff-4a8e-abbd-7da3bfbae019" />
+            <column name="email" value="user5@example.com" />
+            <column name="first_name" value="Ethan" />
+            <column name="last_name" value="Wright" />
+            <column name="birth_date" value="1982-02-28" />
+            <!-- Phone is null -->
+            <column name="address" value="5678 Cedar Blvd" />
+            <column name="updated_date" valueComputed="now()" />
+            <column name="created_date" valueComputed="now()" />
+        </insert>
+        <!-- User 6 -->
+        <insert tableName="system_user">
+            <column name="id" value="1e0bb911-246b-48ff-ac1e-07ad6d8346e7" />
+            <column name="email" value="user6@example.com" />
+            <column name="first_name" value="Fiona" />
+            <column name="last_name" value="Gonzalez" />
+            <column name="birth_date" value="1993-03-17" />
+            <column name="phone" value="+1123581321" />
+            <column name="address" value="6789 Spruce Dr" />
+            <column name="updated_date" valueComputed="now()" />
+            <column name="created_date" valueComputed="now()" />
+        </insert>
+        <!-- User 7 -->
+        <insert tableName="system_user">
+            <column name="id" value="bddc4a85-c90e-4c6d-a2b2-316935487231" />
+            <column name="email" value="user7@example.com" />
+            <column name="first_name" value="George" />
+            <column name="last_name" value="Hernandez" />
+            <column name="birth_date" value="1987-08-22" />
+            <!-- Phone is null -->
+            <column name="address" value="7890 Willow Way" />
+            <column name="updated_date" valueComputed="now()" />
+            <column name="created_date" valueComputed="now()" />
+        </insert>
+        <!-- User 8 -->
+        <insert tableName="system_user">
+            <column name="id" value="bd900cc3-75f3-494a-b777-37e93da2392f" />
+            <column name="email" value="user8@example.com" />
+            <column name="first_name" value="Hannah" />
+            <column name="last_name" value="Ito" />
+            <column name="birth_date" value="1989-12-06" />
+            <column name="phone" value="+1234567809" />
+            <column name="address" value="8901 Pine Road" />
+            <column name="updated_date" valueComputed="now()" />
+            <column name="created_date" valueComputed="now()" />
+        </insert>
+        <!-- User 9 -->
+        <insert tableName="system_user">
+            <column name="id" value="a8d10764-f72c-4fb8-a7de-ed5c9315f9f6" />
+            <column name="email" value="user9@example.com" />
+            <column name="first_name" value="Ivan" />
+            <column name="last_name" value="Jones" />
+            <column name="birth_date" value="1974-11-16" />
+            <column name="phone" value="+9876543210" />
+            <column name="address" value="9012 Elm Lane" />
+            <column name="updated_date" valueComputed="now()" />
+            <column name="created_date" valueComputed="now()" />
+        </insert>
+        <!-- User 10 -->
+        <insert tableName="system_user">
+            <column name="id" value="a3d9f78c-93b2-42d4-a598-ea30f65d7788" />
+            <column name="email" value="user10@example.com" />
+            <column name="first_name" value="Julia" />
+            <column name="last_name" value="Kumar" />
+            <column name="birth_date" value="1986-04-30" />
+            <!-- Phone is null -->
+            <column name="address" value="1012 Cedar Path" />
+            <column name="updated_date" valueComputed="now()" />
+            <column name="created_date" valueComputed="now()" />
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
