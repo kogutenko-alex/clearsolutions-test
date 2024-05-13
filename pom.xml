@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.kogutenko</groupId>
     <artifactId>clearsolutions</artifactId>
-    <version>0.0.1-SNAPSHOT</version>
+    <version>1.0.0</version>
     <name>clearsolutions-backend</name>
     <description>Clear Solutions Backend API</description>
 
